@@ -1,12 +1,12 @@
 import axios from "axios";
-import { accessToken, IP } from "../consts";
+import { IP } from "../consts";
 
 export const GetLeads = async () => {
   const { data } = await axios({
     method: "get",
     url: `${IP}/api/v4/account`,
     headers: {
-      Authorization: `Bearer ${accessToken}`,
+      Authorization: `Bearer`,
     },
   });
   console.log(data);

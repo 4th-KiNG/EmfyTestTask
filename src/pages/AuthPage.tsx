@@ -1,5 +1,11 @@
+import { redirectToAmo } from "../lib/utils/redirectToAmo";
+
 const AuthPage = () => {
-  return <></>;
+  return (
+    <>
+      <button onClick={redirectToAmo}>Авторизоваться через amoCRM</button>
+    </>
+  );
 };
 
 export default AuthPage;
