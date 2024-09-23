@@ -9,7 +9,7 @@ export const GetAccessToken = async (code: string) => {
     code: code,
     redirect_uri: "https://emfy-test-task.vercel.app/#/main",
   };
-
+  console.log(sendData);
   const { data } = await axios({
     method: "post",
     url: `${IP}/oauth2/access_token`,
