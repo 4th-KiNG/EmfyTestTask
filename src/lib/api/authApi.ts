@@ -2,8 +2,6 @@ import axios from "axios";
 import { clientID, clientSecret, IP } from "../consts";
 
 export const GetAccessToken = async (code: string) => {
-  console.log(code);
-
   const { data } = await axios({
     method: "POST",
     url: `${IP}/oauth2/access_token`,
@@ -15,4 +13,5 @@ export const GetAccessToken = async (code: string) => {
       redirect_uri: "http://localhost:5173/main",
     },
   });
+  console.log(data);
 };
