@@ -1,12 +1,9 @@
 import { useEffect } from "react";
-import { useAuth } from "../lib/hooks/useAuth";
 
 const MainPage = () => {
-  const { GetAccessTokenFn } = useAuth();
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const authorizationCode = params.get("code");
-    if (authorizationCode) GetAccessTokenFn(authorizationCode);
   }, []);
   return (
     <>
