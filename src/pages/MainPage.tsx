@@ -8,7 +8,11 @@ const MainPage = () => {
     const authorizationCode = params.get("code");
     if (authorizationCode) GetAccessTokenFn(authorizationCode);
   }, []);
-  return <></>;
+  return (
+    <>
+      <p>123123</p>
+    </>
+  );
 };
 
 export default MainPage;
