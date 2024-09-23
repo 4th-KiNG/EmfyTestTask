@@ -7,7 +7,7 @@ export const GetAccessToken = async (code: string) => {
     client_secret: clientSecret,
     grant_type: "authorization_code",
     code: code,
-    redirect_uri: "https://emfy-test-task.vercel.app/main",
+    redirect_uri: "https://emfy-test-task.vercel.app/#/main",
   };
 
   const { data } = await axios({
