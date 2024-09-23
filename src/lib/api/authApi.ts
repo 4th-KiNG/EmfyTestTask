@@ -2,16 +2,21 @@ import axios from "axios";
 import { clientID, clientSecret, IP } from "../consts";
 
 export const GetAccessToken = async (code: string) => {
+  const sendData = {
+    client_id: clientID,
+    client_secret: clientSecret,
+    grant_type: "authorization_code",
+    code: code,
+    redirect_uri: "https://emfy-test-task.vercel.app/main",
+  };
+
   const { data } = await axios({
-    method: "POST",
+    method: "post",
     url: `${IP}/oauth2/access_token`,
-    data: {
-      client_id: clientID,
-      client_secret: clientSecret,
-      grant_type: "authorization_code",
-      code: code,
-      redirect_uri: "http://localhost:5173/main",
+    headers: {
+      "Content-Type": "application/json",
     },
+    data: JSON.stringify(sendData),
   });
   console.log(data);
 };
