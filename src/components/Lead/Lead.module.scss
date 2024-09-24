@@ -1,0 +1,10 @@
+.Lead {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+  border-radius: 6px;
+  background-color: rgba($color: white, $alpha: 0.5);
+  min-height: 80px;
+  width: 100%;
+}

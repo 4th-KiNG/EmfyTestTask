@@ -7,9 +7,9 @@ export const GetAccessToken = async (code: string) => {
     client_secret: clientSecret,
     grant_type: "authorization_code",
     code: code,
-    redirect_uri: "https://emfy-test-task.vercel.app/#/main",
+    redirect_uri: "http://localhost:5173/#/main",
   };
-  console.log(sendData);
+
   const { data } = await axios({
     method: "post",
     url: `${IP}/oauth2/access_token`,
@@ -18,5 +18,7 @@ export const GetAccessToken = async (code: string) => {
     },
     data: JSON.stringify(sendData),
   });
-  console.log(data);
+  if (data) {
+    localStorage.setItem("access_token", data.access_token);
+  }
 };
